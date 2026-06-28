@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumi Beauty — Beauty Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header" id="top">
+        <nav class="nav" aria-label="Главная навигация">
+            <a class="logo" href="#top" aria-label="Lumi Beauty">
+                <span class="logo-mark">L</span>
+                <span>Lumi Beauty</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-menu">
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-list" id="main-menu">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#about">О студии</a></li>
+                <li><a href="#portfolio">Портфолио</a></li>
+                <li><a href="#prices">Цены</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a class="nav-cta" href="#contact">Запись</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero section-reveal">
+            <div class="hero-content">
+                <p class="eyebrow">Beauty Studio / Premium Care</p>
+                <h1>Аккуратный уход и beauty-услуги в спокойной атмосфере</h1>
+                <p class="hero-text">Брови, ресницы, макияж и уход — с вниманием к деталям и вашему образу.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#contact">Записаться</a>
+                    <a class="btn btn-secondary" href="#services">Посмотреть услуги</a>
+                </div>
+                <div class="hero-notes" aria-label="Коротко о студии">
+                    <span>с 10:00 до 21:00</span>
+                    <span>онлайн-запись</span>
+                    <span>бережные составы</span>
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-label="Преимущества студии">
+                <div class="beauty-card">
+                    <div class="beauty-card-top">
+                        <span class="soft-label">Lumi ritual</span>
+                        <span class="rating">4.9</span>
+                    </div>
+                    <div class="portrait-placeholder">
+                        <span></span>
+                    </div>
+                    <ul class="benefit-list">
+                        <li>индивидуальный подход</li>
+                        <li>стерильные инструменты</li>
+                        <li>аккуратный результат</li>
+                        <li>уютная атмосфера</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="services section-reveal" id="services">
+            <div class="section-heading">
+                <p class="section-kicker">Услуги</p>
+                <h2>Деликатные процедуры для выразительного образа</h2>
+            </div>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <span class="card-number">01</span>
+                    <h3>Оформление бровей</h3>
+                    <p>Подбор формы, бережная коррекция и оттенок, который мягко подчеркивает черты лица.</p>
+                </article>
+                <article class="service-card">
+                    <span class="card-number">02</span>
+                    <h3>Ламинирование ресниц</h3>
+                    <p>Естественный изгиб, визуальная густота и ухоженный вид без ежедневной укладки.</p>
+                </article>
+                <article class="service-card">
+                    <span class="card-number">03</span>
+                    <h3>Макияж</h3>
+                    <p>Дневной, вечерний или событийный образ с чистой кожей и гармоничными акцентами.</p>
+                </article>
+                <article class="service-card">
+                    <span class="card-number">04</span>
+                    <h3>Комплексный уход</h3>
+                    <p>Продуманные сочетания процедур для свежего, аккуратного и завершенного результата.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="about section-reveal" id="about">
+            <div class="about-panel">
+                <div>
+                    <p class="section-kicker">Почему выбирают нас</p>
+                    <h2>Каждая деталь работает на чувство уверенности</h2>
+                </div>
+                <div class="reason-grid">
+                    <div class="reason-item">аккуратность</div>
+                    <div class="reason-item">эстетика</div>
+                    <div class="reason-item">безопасность</div>
+                    <div class="reason-item">комфорт</div>
+                    <div class="reason-item">внимание к деталям</div>
+                </div>
+                <div class="studio-details">
+                    <article>
+                        <span>01</span>
+                        <p>тихий кабинет без спешки</p>
+                    </article>
+                    <article>
+                        <span>02</span>
+                        <p>одноразовые расходники</p>
+                    </article>
+                    <article>
+                        <span>03</span>
+                        <p>персональные рекомендации</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio section-reveal" id="portfolio">
+            <div class="section-heading">
+                <p class="section-kicker">Портфолио работ</p>
+                <h2>Нежные визуальные акценты будущей галереи</h2>
+            </div>
+
+            <div class="portfolio-grid" aria-label="Декоративные карточки работ">
+                <div class="portfolio-tile tile-one"><span>Brows</span></div>
+                <div class="portfolio-tile tile-two"><span>Lashes</span></div>
+                <div class="portfolio-tile tile-three"><span>Makeup</span></div>
+                <div class="portfolio-tile tile-four"><span>Care</span></div>
+                <div class="portfolio-tile tile-five"><span>Glow</span></div>
+                <div class="portfolio-tile tile-six"><span>Soft</span></div>
+            </div>
+        </section>
+
+        <section class="steps section-reveal">
+            <div class="section-heading">
+                <p class="section-kicker">Как проходит запись</p>
+                <h2>Простой путь от выбора услуги до рекомендаций</h2>
+            </div>
+
+            <div class="steps-grid">
+                <article class="step-card">
+                    <span>1</span>
+                    <h3>Вы выбираете услугу</h3>
+                    <p>Определяем процедуру или собираем подходящий комплекс.</p>
+                </article>
+                <article class="step-card">
+                    <span>2</span>
+                    <h3>Мы подбираем удобное время</h3>
+                    <p>Согласуем дату и оставляем достаточно времени без спешки.</p>
+                </article>
+                <article class="step-card">
+                    <span>3</span>
+                    <h3>Проводим процедуру</h3>
+                    <p>Работаем бережно, чисто и с вниманием к симметрии.</p>
+                </article>
+                <article class="step-card">
+                    <span>4</span>
+                    <h3>Даём рекомендации по уходу</h3>
+                    <p>Рассказываем, как сохранить результат красивым дольше.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="prices section-reveal" id="prices">
+            <div class="section-heading">
+                <p class="section-kicker">Цены</p>
+                <h2>Понятная стоимость без лишней сложности</h2>
+            </div>
+
+            <div class="price-list">
+                <button class="price-row price-option" type="button" data-service="Брови" data-price="от 1 500 ₽" aria-pressed="false">
+                    <span class="price-name">Брови</span>
+                    <span class="price-meta">
+                        <strong>от 1 500 ₽</strong>
+                        <small>Выбрать</small>
+                    </span>
+                </button>
+                <button class="price-row price-option" type="button" data-service="Ресницы" data-price="от 2 000 ₽" aria-pressed="false">
+                    <span class="price-name">Ресницы</span>
+                    <span class="price-meta">
+                        <strong>от 2 000 ₽</strong>
+                        <small>Выбрать</small>
+                    </span>
+                </button>
+                <button class="price-row price-option" type="button" data-service="Макияж" data-price="от 3 000 ₽" aria-pressed="false">
+                    <span class="price-name">Макияж</span>
+                    <span class="price-meta">
+                        <strong>от 3 000 ₽</strong>
+                        <small>Выбрать</small>
+                    </span>
+                </button>
+                <button class="price-row price-option" type="button" data-service="Комплекс" data-price="от 4 500 ₽" aria-pressed="false">
+                    <span class="price-name">Комплекс</span>
+                    <span class="price-meta">
+                        <strong>от 4 500 ₽</strong>
+                        <small>Выбрать</small>
+                    </span>
+                </button>
+            </div>
+            <div class="price-support">
+                <span>подбор времени</span>
+                <span>уточнение пожеланий</span>
+                <span>напоминание перед визитом</span>
+            </div>
+        </section>
+
+        <section class="reviews section-reveal">
+            <div class="section-heading">
+                <p class="section-kicker">Отзывы</p>
+                <h2>Слова, которые хочется слышать после процедуры</h2>
+            </div>
+
+            <div class="reviews-grid">
+                <article class="review-card">
+                    <p>“Очень аккуратная работа”</p>
+                    <span>Гость студии</span>
+                </article>
+                <article class="review-card">
+                    <p>“Приятная атмосфера”</p>
+                    <span>Гость студии</span>
+                </article>
+                <article class="review-card">
+                    <p>“Результат выглядел естественно”</p>
+                    <span>Гость студии</span>
+                </article>
+            </div>
+        </section>
+
+        <section class="faq section-reveal" id="faq">
+            <div class="section-heading">
+                <p class="section-kicker">FAQ</p>
+                <h2>Ответы перед визитом</h2>
+            </div>
+
+            <div class="faq-list">
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Сколько длится процедура?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>В среднем от 40 минут до 2 часов, в зависимости от выбранной услуги и желаемого результата.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Нужно ли готовиться заранее?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Достаточно прийти без плотного макияжа в зоне процедуры. Остальное обсудим перед началом.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Можно ли записаться онлайн?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, можно выбрать услугу и оставить заявку через кнопку записи на странице.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Как долго держится результат?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Срок зависит от процедуры, домашнего ухода и индивидуальных особенностей. Обычно эффект заметен несколько недель.</p>
+                    </div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-question" type="button" aria-expanded="false">
+                        <span>Есть ли рекомендации после процедуры?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, после визита вы получите понятные рекомендации, которые помогут сохранить аккуратный вид.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact section-reveal" id="contact">
+            <div class="contact-panel">
+                <p class="section-kicker">Запись</p>
+                <h2>Хотите подобрать услугу и удобное время?</h2>
+                <p class="booking-choice" id="booking-choice" hidden></p>
+                <a class="btn btn-primary" id="booking-link" href="mailto:hello@example.com">Записаться в студию</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>Lumi Beauty Landing — demo project</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
