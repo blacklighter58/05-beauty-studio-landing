@@ -307,22 +307,38 @@ h3 {
 }
 
 .btn {
+    position: relative;
+    overflow: hidden;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 52px;
     padding: 14px 24px;
     border: 1px solid transparent;
-    border-radius: 999px;
+    border-radius: 999px 28px 999px 28px;
     cursor: pointer;
     font-weight: 800;
     transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease, border-color 220ms ease;
+}
+
+.btn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 0 42%, rgba(255, 255, 255, 0.26) 50%, transparent 58% 100%);
+    transform: translateX(-120%);
+    transition: transform 560ms ease;
 }
 
 .btn:hover,
 .btn:focus-visible {
     transform: translateY(-4px);
     outline: none;
+}
+
+.btn:hover::after,
+.btn:focus-visible::after {
+    transform: translateX(120%);
 }
 
 .btn:active {
@@ -341,6 +357,7 @@ h3 {
 }
 
 .btn-secondary {
+    border-radius: 28px 999px 28px 999px;
     color: var(--ink);
     border-color: rgba(199, 161, 91, 0.32);
     background: rgba(255, 255, 255, 0.92);
@@ -418,7 +435,7 @@ h3 {
 .rating {
     display: grid;
     place-items: center;
-    width: 52px;
+    width: 60px;
     height: 52px;
     border-radius: 50%;
     color: var(--ink);
@@ -494,14 +511,24 @@ h3 {
     background: rgba(255, 249, 241, 0.92);
     font-size: 0.92rem;
     font-weight: 700;
+    line-height: 1.35;
 }
 
 .section-heading {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 2px;
     margin-bottom: 30px;
+}
+
+.section-heading::after {
+    content: "";
+    width: min(140px, 42vw);
+    height: 1px;
+    margin-top: 12px;
+    background: linear-gradient(90deg, rgba(199, 161, 91, 0.54), transparent);
 }
 
 .services-grid,
@@ -510,6 +537,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 14px;
+    align-items: stretch;
 }
 
 .service-card,
@@ -524,6 +552,18 @@ h3 {
     background: var(--card-bg);
     box-shadow: var(--soft-shadow);
     transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease, background 240ms ease;
+}
+
+.service-card:nth-child(2) {
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(255, 243, 236, 0.94)),
+        var(--card-bg);
+}
+
+.service-card:nth-child(4) {
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(249, 237, 217, 0.94)),
+        var(--card-bg);
 }
 
 .service-card::before,
@@ -653,8 +693,8 @@ h3 {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: 150px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 190px;
     gap: 16px;
 }
 
@@ -691,40 +731,35 @@ h3 {
     left: 20px;
     bottom: 18px;
     z-index: 1;
+    max-width: calc(100% - 40px);
     color: rgba(53, 39, 37, 0.64);
     font-family: "Tenor Sans", Georgia, serif;
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: clamp(1.2rem, 2.3vw, 1.65rem);
+    font-weight: 400;
+    line-height: 1.12;
 }
 
 .tile-one {
-    grid-column: span 2;
-    grid-row: span 2;
     background: linear-gradient(145deg, #f1c8bd, #f8e6cd);
 }
 
 .tile-two {
-    grid-column: span 2;
     background: linear-gradient(145deg, #f7d7df, #fff6ee);
 }
 
 .tile-three {
-    grid-column: span 2;
     background: linear-gradient(145deg, #f2dfb1, #f9d2c0);
 }
 
 .tile-four {
-    grid-column: span 2;
     background: linear-gradient(145deg, #fff7ed, #dfb9a9);
 }
 
 .tile-five {
-    grid-column: span 2;
     background: linear-gradient(145deg, #efc2c6, #f7eadc);
 }
 
 .tile-six {
-    grid-column: span 2;
     background: linear-gradient(145deg, #f7eadc, #e8c69c);
 }
 
@@ -869,16 +904,24 @@ h3 {
 }
 
 .review-card {
-    min-height: 210px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+.review-card:nth-child(2) {
+    margin-top: 28px;
+}
+
+.review-card:nth-child(3) {
+    margin-top: 10px;
+}
+
 .review-card p {
     font-family: "Tenor Sans", Georgia, serif;
-    font-size: 2rem;
-    line-height: 1.08;
+    font-size: clamp(1.28rem, 1.8vw, 1.55rem);
+    line-height: 1.25;
 }
 
 .faq {
@@ -1154,7 +1197,7 @@ h3 {
     }
 
     .portfolio-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -1205,13 +1248,13 @@ h3 {
     }
 
     #services {
-        padding-top: 16px;
+        padding-top: 0;
     }
 
     .hero {
         min-height: auto;
-        padding-top: 34px;
-        padding-bottom: 22px;
+        padding-top: 24px;
+        padding-bottom: 10px;
     }
 
     h1 {
@@ -1255,8 +1298,8 @@ h3 {
     .hero-notes span {
         display: grid;
         place-items: center;
-        min-height: 38px;
-        padding: 7px 6px;
+        min-height: 34px;
+        padding: 6px;
         font-size: 0.68rem;
         line-height: 1.2;
         text-align: center;
@@ -1290,6 +1333,14 @@ h3 {
         min-height: auto;
     }
 
+    .service-card:nth-child(2),
+    .service-card:nth-child(3),
+    .service-card:nth-child(4),
+    .review-card:nth-child(2),
+    .review-card:nth-child(3) {
+        margin-top: 0;
+    }
+
     .card-number,
     .step-card span {
         margin-bottom: 28px;
@@ -1314,13 +1365,7 @@ h3 {
     }
 
     .portfolio-tile {
-        grid-column: span 1;
-        grid-row: span 1;
-    }
-
-    .tile-one,
-    .tile-six {
-        grid-column: span 2;
+        min-height: 138px;
     }
 
     .price-row {
@@ -1358,8 +1403,8 @@ h3 {
     }
 
     .benefit-list li {
-        min-height: 42px;
-        padding: 8px;
+        min-height: 38px;
+        padding: 7px;
         font-size: 0.72rem;
         line-height: 1.25;
     }
@@ -1382,10 +1427,5 @@ h3 {
 
     .portfolio-grid {
         grid-template-columns: 1fr;
-    }
-
-    .tile-one,
-    .tile-six {
-        grid-column: span 1;
     }
 }
