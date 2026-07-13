@@ -56,7 +56,6 @@ body::before {
         linear-gradient(142deg, transparent 0 74%, rgba(199, 161, 91, 0.13) 74.2% 75%, transparent 75.2% 100%);
     background-size: 640px 640px, 520px 520px, 720px 720px;
     opacity: 0.8;
-    animation: silkDrift 18s ease-in-out infinite alternate;
 }
 
 body::after {
@@ -286,15 +285,6 @@ h3 {
     box-shadow: 0 12px 25px rgba(140, 95, 81, 0.08);
     font-size: 0.88rem;
     font-weight: 700;
-    animation: noteFloat 5.8s ease-in-out infinite;
-}
-
-.hero-notes span:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.hero-notes span:nth-child(3) {
-    animation-delay: 0.8s;
 }
 
 .hero-notes span::before {
@@ -303,7 +293,11 @@ h3 {
     inset: 0;
     background: linear-gradient(115deg, transparent 0 30%, rgba(242, 223, 177, 0.28) 46%, transparent 62% 100%);
     transform: translateX(-120%);
-    animation: tinyShine 4.6s ease-in-out infinite;
+    transition: transform 520ms ease;
+}
+
+.hero-notes span:hover::before {
+    transform: translateX(120%);
 }
 
 .btn {
@@ -398,7 +392,12 @@ h3 {
     background: var(--card-bg);
     box-shadow: var(--shadow);
     backdrop-filter: blur(24px);
-    animation: cardBreath 7s ease-in-out infinite;
+    transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
+}
+
+.beauty-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(199, 161, 91, 0.36);
 }
 
 .beauty-card::after {
@@ -443,7 +442,7 @@ h3 {
     letter-spacing: 0;
 }
 
-.portrait-placeholder {
+.portrait-visual {
     position: relative;
     min-height: 270px;
     overflow: hidden;
@@ -455,15 +454,15 @@ h3 {
         linear-gradient(150deg, #e9b7b7 0%, #f7d9c7 45%, #f2dfb1 100%);
 }
 
-.portrait-placeholder::before,
-.portrait-placeholder::after {
+.portrait-visual::before,
+.portrait-visual::after {
     content: "";
     position: absolute;
     inset: auto;
     border-radius: 999px 999px 18px 18px;
 }
 
-.portrait-placeholder::before {
+.portrait-visual::before {
     left: 50%;
     bottom: 0;
     width: 48%;
@@ -472,7 +471,7 @@ h3 {
     background: linear-gradient(180deg, rgba(255, 249, 241, 0.92), rgba(217, 150, 145, 0.42));
 }
 
-.portrait-placeholder::after {
+.portrait-visual::after {
     left: 50%;
     bottom: 22%;
     width: 30%;
@@ -482,7 +481,7 @@ h3 {
     box-shadow: 0 0 0 18px rgba(152, 95, 99, 0.1);
 }
 
-.portrait-placeholder span {
+.portrait-visual span {
     position: absolute;
     left: 50%;
     bottom: 32%;
@@ -497,7 +496,7 @@ h3 {
 
 .benefit-list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 10px;
     margin-top: 18px;
 }
@@ -521,6 +520,13 @@ h3 {
     align-items: flex-start;
     gap: 2px;
     margin-bottom: 30px;
+}
+
+.section-text {
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: 300;
 }
 
 .section-heading::after {
@@ -552,6 +558,11 @@ h3 {
     background: var(--card-bg);
     box-shadow: var(--soft-shadow);
     transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease, background 240ms ease;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
 }
 
 .service-card:nth-child(2) {
@@ -613,6 +624,20 @@ h3 {
 .step-card p,
 .review-card span {
     color: var(--muted);
+}
+
+.service-time {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 8px 11px;
+    border: 1px solid rgba(199, 161, 91, 0.2);
+    border-radius: 999px;
+    color: var(--rose-dark);
+    background: rgba(255, 249, 241, 0.9);
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1.2;
 }
 
 .about-panel,
@@ -888,15 +913,6 @@ h3 {
     box-shadow: 0 12px 24px rgba(140, 95, 81, 0.08);
     font-size: 0.86rem;
     font-weight: 800;
-    animation: noteFloat 6.2s ease-in-out infinite;
-}
-
-.price-support span:nth-child(2) {
-    animation-delay: 0.35s;
-}
-
-.price-support span:nth-child(3) {
-    animation-delay: 0.7s;
 }
 
 .reviews-grid {
@@ -1078,50 +1094,6 @@ h3 {
 .section-reveal.is-visible .portfolio-tile:nth-child(4),
 .section-reveal.is-visible .price-row:nth-child(4) {
     animation-delay: 190ms;
-}
-
-@keyframes silkDrift {
-    from {
-        background-position: 0 0, 0 0, 0 0;
-    }
-
-    to {
-        background-position: 70px -40px, -56px 36px, 42px 62px;
-    }
-}
-
-@keyframes cardBreath {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
-@keyframes noteFloat {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-4px);
-    }
-}
-
-@keyframes tinyShine {
-    0%,
-    35% {
-        transform: translateX(-120%);
-    }
-
-    70%,
-    100% {
-        transform: translateX(120%);
-    }
 }
 
 @keyframes softRise {
@@ -1392,7 +1364,7 @@ h3 {
         font-size: 0.74rem;
     }
 
-    .portrait-placeholder {
+    .portrait-visual {
         display: none;
     }
 
@@ -1421,7 +1393,7 @@ h3 {
         height: 34px;
     }
 
-    .portrait-placeholder {
+    .portrait-visual {
         min-height: 130px;
     }
 
